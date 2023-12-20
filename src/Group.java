@@ -6,6 +6,7 @@ public class Group {
     private Date date;
     private Set<User> members;
     private static Set<Group> groups;
+    private static Set<Group> archivedGroups;
 
     /**
      * Default constructor for a group
@@ -24,10 +25,11 @@ public class Group {
      * Allows deleting groups who were created after a given date
      * @param expiryDate If a group's date is later than this, the group will be deleted
      */
-    public static void deleteGroup(Date expiryDate){
+    public static void deleteInactiveGroups(Date expiryDate){
         for (Group group: groups){
             if (group.getDate().after(expiryDate)){
                 groups.remove(group);
+                archivedGroups.add(group);
             }
         }
     }
@@ -58,5 +60,13 @@ public class Group {
 
     public Date getDate() {
         return date;
+    }
+
+    public static Set<Group> getGroups() {
+        return groups;
+    }
+
+    public static Set<Group> getArchivedGroups() {
+        return archivedGroups;
     }
 }

@@ -39,12 +39,14 @@ public class Order {
     }
 
     /**
-     *
+     * Allows finding all orders in which a given user took part in
      * @param user User for which orders are found
      * @return Set of orders made by that user
      */
     static Set<Order> checkOrderHistory(User user) {
-        return new HashSet<>();
+        Set<Order> result = new HashSet<>();
+        //TODO populating the result
+        return result;
     }
 
 
