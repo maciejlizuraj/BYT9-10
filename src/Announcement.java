@@ -20,6 +20,7 @@ public class Announcement {
         Announcement announcement = new Announcement(title, expiryDate, content);
         Set<Announcement> announcementSet = announcements.computeIfAbsent(restaurant, k -> new HashSet<>());
         announcementSet.add(announcement);
+        announcements.put(restaurant, announcementSet);
     }
 
     /**

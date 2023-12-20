@@ -52,10 +52,12 @@ public class Product {
         for (Allergen allergen : product.getAllergens()) {
             Set<Product> set = allergenToProducts.computeIfAbsent(allergen, k -> new HashSet<>());
             set.add(product);
+            allergenToProducts.put(allergen, set);
         }
         Restaurant restaurant = product.getRestaurant();
         Set<Product> set = restaurantToProducts.computeIfAbsent(restaurant, k -> new HashSet<>());
         set.add(product);
+        restaurantToProducts.put(restaurant, set);
     }
 
     /**
