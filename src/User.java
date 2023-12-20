@@ -7,7 +7,11 @@ public class User extends VerifiedPerson {
     Set<Allergen> allergens;
     Set<User> friends;
 
-
+    /**
+     * Default constructor for a user
+     * @param email Email of the user
+     * @param password Password of the user
+     */
     public User(String email, String password) {
         super(email, password);
         allergens = new HashSet<>();
@@ -18,9 +22,9 @@ public class User extends VerifiedPerson {
      * Allows registering a user
      * @param email Email of the user
      * @param password Password of the user
-     * @throws EmailAlreadyUsedException Thrown if Email is already in use for the user
+     * @throws EmailAlreadyUsedException Thrown if Email is already in use for a user
      */
-    static public void RegisterAUser(String email, String password) throws EmailAlreadyUsedException {
+    static public void register(String email, String password) throws EmailAlreadyUsedException {
         if (users.containsKey(email)) {
             throw new EmailAlreadyUsedException();
         }
