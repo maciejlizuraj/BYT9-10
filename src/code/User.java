@@ -26,12 +26,13 @@ public class User extends VerifiedPerson {
      * @param password Password of the user
      * @throws EmailAlreadyUsedException Thrown if Email is already in use for a user
      */
-    static public void register(String email, String password) throws EmailAlreadyUsedException {
+    static public User register(String email, String password) throws EmailAlreadyUsedException {
         if (users.containsKey(email)) {
             throw new EmailAlreadyUsedException();
         }
         User user = new User(email, password);
         users.put(email, user);
+        return user;
     }
 
     /**
@@ -71,13 +72,14 @@ public class User extends VerifiedPerson {
             throw new UserIsNotAFriend();
         }
         user.removeFriend(this);
+        friends.remove(user);
     }
 
     /**
      * Private method for removing a friend
      * @param user code.User to be deleted
      */
-    public void removeFriend(User user) {
+    private void removeFriend(User user) {
         this.friends.remove(user);
     }
 
