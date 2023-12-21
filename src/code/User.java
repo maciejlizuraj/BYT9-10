@@ -4,7 +4,7 @@ import java.util.*;
 
 public class User extends VerifiedPerson {
 
-    static HashMap<String, User> users;
+    static HashMap<String, User> users = new HashMap<>();
 
     Set<Allergen> allergens;
     Set<User> friends;

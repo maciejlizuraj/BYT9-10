@@ -7,7 +7,7 @@ import java.util.Set;
 public class Coupon {
 
 
-    static Set<Coupon> coupons;
+    static Set<Coupon> coupons = new HashSet<>();
     int DiscountValue;
     Date expiryDate;
     Product product;

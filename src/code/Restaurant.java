@@ -5,7 +5,7 @@ import java.util.Set;
 
 public class Restaurant {
 
-    static Set<Restaurant> restaurants;
+    static Set<Restaurant> restaurants = new HashSet<>();
     String location;
     String address;
     String NIP;
