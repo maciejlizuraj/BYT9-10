@@ -1,3 +1,5 @@
+package code;
+
 import java.util.*;
 
 public class Group {
@@ -11,7 +13,7 @@ public class Group {
     /**
      * Default constructor for a group
      * @param name Name of a group
-     * @param user User who initiated the group
+     * @param user code.User who initiated the group
      */
     public Group(String name, User user) {
         this.name = name;
@@ -36,7 +38,7 @@ public class Group {
 
     /**
      * Allows adding a user to a group
-     * @param user User to be added
+     * @param user code.User to be added
      * @throws UserAlreadyInGroup Thrown if user is already in this group
      */
     public void addToGroup(User user) throws UserAlreadyInGroup {
@@ -48,7 +50,7 @@ public class Group {
 
     /**
      * Allows removing a user from a group
-     * @param user User to be deleted
+     * @param user code.User to be deleted
      * @throws UserNotInGroup Thrown if user is not present in this group
      */
     public void removeFromGroup(User user) throws UserNotInGroup{

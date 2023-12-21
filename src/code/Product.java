@@ -1,3 +1,5 @@
+package code;
+
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -21,7 +23,7 @@ public class Product {
      * @param description
      * @param price Price of a single product
      * @param allergens Allergens present in the product
-     * @param restaurant Restaurant in which the product is sold
+     * @param restaurant code.Restaurant in which the product is sold
      */
     public Product(String name, String description, double price, Set<Allergen> allergens, Restaurant restaurant) {
         this.name = name;
@@ -34,7 +36,7 @@ public class Product {
 
     /**
      * Allows viewing all products sold in a given restaurant which do not contain given allergens
-     * @param restaurant Restaurant to be searched
+     * @param restaurant code.Restaurant to be searched
      * @param allergens Blacklisted allergens
      * @return Set of products compliant to specification
      */
@@ -46,7 +48,7 @@ public class Product {
 
     /**
      * Method for adding a product. Takes care of adding it to required records.
-     * @param product Product to be added
+     * @param product code.Product to be added
      */
     static public void addProduct(Product product) {
         for (Allergen allergen : product.getAllergens()) {

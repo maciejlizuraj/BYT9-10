@@ -1,3 +1,5 @@
+package code;
+
 import java.util.*;
 
 public class User extends VerifiedPerson {
@@ -48,7 +50,7 @@ public class User extends VerifiedPerson {
 
     /**
      * Private method for adding a friend
-     * @param user User to be added
+     * @param user code.User to be added
      */
     private void addFriend(User user) {
         this.friends.add(user);
@@ -73,7 +75,7 @@ public class User extends VerifiedPerson {
 
     /**
      * Private method for removing a friend
-     * @param user User to be deleted
+     * @param user code.User to be deleted
      */
     public void removeFriend(User user) {
         this.friends.remove(user);

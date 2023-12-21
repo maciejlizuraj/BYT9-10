@@ -1,3 +1,5 @@
+package code;
+
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -14,7 +16,7 @@ public class Coupon {
      * Default constructor of a coupon
      * @param discountValue Percentage value of how much the price should be reduced by
      * @param expiryDate Date by which the coupon should be removed as it is no longer valid
-     * @param product Product this coupon is for
+     * @param product code.Product this coupon is for
      * @throws InvalidValueException Error thrown if value is not a valid percentage
      */
     public Coupon(int discountValue, Date expiryDate, Product product) throws InvalidValueException {
@@ -27,7 +29,7 @@ public class Coupon {
 
     /**
      * View all coupons for products with only allergens accepted by the user
-     * @param user User for which coupons are looked for
+     * @param user code.User for which coupons are looked for
      * @return Set of coupons compliant with the specification
      */
     public static Set<Coupon> viewListOfCoupons(User user) {
@@ -40,7 +42,7 @@ public class Coupon {
      * Method for adding a coupon
      * @param discountValue Percentage value of how much the price should be reduced by
      * @param expiryDate Date by which the coupon should be removed as it is no longer valid
-     * @param product Product this coupon is for
+     * @param product code.Product this coupon is for
      * @throws InvalidValueException Error thrown if value is not a valid percentage
      */
     public static void addCoupon(int discountValue, Date expiryDate, Product product) throws InvalidValueException {
