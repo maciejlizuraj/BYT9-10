@@ -38,11 +38,11 @@ public class User extends VerifiedPerson {
     /**
      * Allows adding a friend to user's friend set. Both users end up in their friend sets
      * @param friendEmail Email of a user who is supposed to be added as a friend
-     * @throws UserDoesNotExist Thrown if a user with that email does not exist
+     * @throws UserDoesNotExistException Thrown if a user with that email does not exist
      */
-    public void addFriend(String friendEmail) throws UserDoesNotExist {
+    public void addFriend(String friendEmail) throws UserDoesNotExistException {
         if (!users.containsKey(friendEmail)) {
-            throw new UserDoesNotExist();
+            throw new UserDoesNotExistException();
         }
         User user = users.get(friendEmail);
         friends.add(user);
@@ -60,16 +60,16 @@ public class User extends VerifiedPerson {
     /**
      * Allows removing a friend. Both users are removed from each other's sets
      * @param friendEmail Email of a user to be deleted from friend set.
-     * @throws UserDoesNotExist Thrown if user does not exist
-     * @throws UserIsNotAFriend Thrown if user is not a friend of a user from which they are supposed to be deleted
+     * @throws UserDoesNotExistException Thrown if user does not exist
+     * @throws UserIsNotAFriendException Thrown if user is not a friend of a user from which they are supposed to be deleted
      */
-    public void removeFriend(String friendEmail) throws UserDoesNotExist, UserIsNotAFriend {
+    public void removeFriend(String friendEmail) throws UserDoesNotExistException, UserIsNotAFriendException {
         if (!users.containsKey(friendEmail)) {
-            throw new UserDoesNotExist();
+            throw new UserDoesNotExistException();
         }
         User user = users.get(friendEmail);
         if (!friends.contains(user)) {
-            throw new UserIsNotAFriend();
+            throw new UserIsNotAFriendException();
         }
         user.removeFriend(this);
         friends.remove(user);
@@ -93,5 +93,15 @@ public class User extends VerifiedPerson {
 
     public Set<User> getFriends() {
         return friends;
+    }
+
+    public static void resetUsers() {
+        User.users = new HashMap<>();
+    }
+
+    public static class UserIsNotAFriendException extends Exception{
+    }
+
+    public static class UserDoesNotExistException extends Exception{
     }
 }
