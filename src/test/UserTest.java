@@ -3,7 +3,6 @@ package test;
 
 import code.EmailAlreadyUsedException;
 import code.User;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -13,14 +12,8 @@ public class UserTest {
 
     @BeforeEach
     public void setUp() {
-
-    }
-
-    @AfterEach
-    public void after() {
         User.resetUsers();
     }
-
 
     //Test passed.
     @Test
