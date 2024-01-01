@@ -11,25 +11,24 @@ public class Order {
 
     Date date;
     Group group;
-    Map<Integer, Set<Product>> productsMap;
+    Set<OrderProduct> orderProducts;
     double totalPrice;
 
     /**
      * Default constructor of an order
      * @param date Date when order was created
      * @param group code.Group which created the order
-     * @param productsMap Maps quantities with sets of products ordered in those quantities
+     * @param orderProducts Set containing all related products and their quantities
      */
-    public Order(Date date, Group group, Map<Integer, Set<Product>> productsMap) {
+    public Order(Date date, Group group, Set<OrderProduct> orderProducts) {
         this.date = date;
         this.group = group;
-        this.productsMap = productsMap;
+        this.orderProducts = orderProducts;
         totalPrice = 0;
-        for (Integer i : productsMap.keySet()) {
-            for (Product product : productsMap.get(i)) {
-                totalPrice += (double) i * product.getPrice();
-            }
+        for (OrderProduct orderProduct : orderProducts) {
+            totalPrice += (double) orderProduct.getQuantity() * orderProduct.getProduct().getPrice();
         }
+
         orders.add(this);
     }
 
