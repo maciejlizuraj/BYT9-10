@@ -7,8 +7,8 @@ public class Group {
     private String name;
     private Date date;
     private Set<User> members;
-    private static Set<Group> groups;
-    private static Set<Group> archivedGroups;
+    private static Set<Group> groups = new HashSet<>();
+    private static Set<Group> archivedGroups = new HashSet<>();
 
     /**
      * Default constructor for a group
