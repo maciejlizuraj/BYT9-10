@@ -14,7 +14,7 @@ public class Announcement {
         this.content = content;
     }
 
-    static Set<Announcement> readAnnouncement(Restaurant restaurant){
+    static Set<Announcement> readAnnouncements(Restaurant restaurant){
         return announcements.get(restaurant);
     }
 
@@ -31,5 +31,21 @@ public class Announcement {
      */
     static boolean removeInactiveAnnouncements(){
         return true;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public Date getExpiryDate() {
+        return expiryDate;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public static Map<Restaurant, Set<Announcement>> getAnnouncements() {
+        return announcements;
     }
 }

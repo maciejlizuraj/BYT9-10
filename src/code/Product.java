@@ -103,4 +103,12 @@ public class Product {
     public Set<Coupon> getCoupons() {
         return coupons;
     }
+
+    public static Map<Allergen, Set<Product>> getAllergenToProducts() {
+        return allergenToProducts;
+    }
+
+    public static Map<Restaurant, Set<Product>> getRestaurantToProducts() {
+        return restaurantToProducts;
+    }
 }

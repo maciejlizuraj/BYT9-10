@@ -50,5 +50,23 @@ public class Order {
         return result;
     }
 
+    public static Set<Order> getOrders() {
+        return orders;
+    }
 
+    public Date getDate() {
+        return date;
+    }
+
+    public Group getGroup() {
+        return group;
+    }
+
+    public Set<OrderProduct> getOrderProducts() {
+        return orderProducts;
+    }
+
+    public double getTotalPrice() {
+        return totalPrice;
+    }
 }

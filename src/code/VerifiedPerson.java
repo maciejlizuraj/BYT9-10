@@ -39,4 +39,8 @@ public class VerifiedPerson {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    public static Map<String, VerifiedPerson> getVerifiedPeople() {
+        return verifiedPeople;
+    }
 }

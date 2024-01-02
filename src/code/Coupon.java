@@ -8,7 +8,7 @@ public class Coupon {
 
 
     static Set<Coupon> coupons = new HashSet<>();
-    int DiscountValue;
+    int discountValue;
     Date expiryDate;
     Product product;
 
@@ -22,7 +22,7 @@ public class Coupon {
     public Coupon(int discountValue, Date expiryDate, Product product) throws InvalidValueException {
         if (discountValue>100 || discountValue<1)
             throw new InvalidValueException();
-        DiscountValue = discountValue;
+        this.discountValue = discountValue;
         this.expiryDate = expiryDate;
         this.product = product;
     }
@@ -51,4 +51,19 @@ public class Coupon {
         product.getCoupons().add(coupon);
     }
 
+    public int getDiscountValue() {
+        return discountValue;
+    }
+
+    public Date getExpiryDate() {
+        return expiryDate;
+    }
+
+    public Product getProduct() {
+        return product;
+    }
+
+    public static Set<Coupon> getCoupons() {
+        return coupons;
+    }
 }

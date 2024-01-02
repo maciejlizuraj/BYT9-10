@@ -71,4 +71,12 @@ public class Group {
     public static Set<Group> getArchivedGroups() {
         return archivedGroups;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public Set<User> getMembers() {
+        return members;
+    }
 }

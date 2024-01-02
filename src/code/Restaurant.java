@@ -52,4 +52,24 @@ public class Restaurant {
             throw new OnlyOwnerException();
         owners.remove(owner);
     }
+
+    public static Set<Restaurant> getRestaurants() {
+        return restaurants;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public String getNIP() {
+        return NIP;
+    }
+
+    public Set<RestaurantOwner> getOwners() {
+        return owners;
+    }
 }
