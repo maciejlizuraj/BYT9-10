@@ -1,12 +1,10 @@
 package code;
 
 public class OrderProduct {
-    private Order order;
     private Product product;
     private Integer quantity;
 
-    public OrderProduct(Order order, Product product, Integer quantity) {
-        this.order = order;
+    public OrderProduct(Product product, Integer quantity) {
         this.product = product;
         this.quantity = quantity;
     }
@@ -16,10 +14,6 @@ public class OrderProduct {
 
     public Product getProduct() {
         return product;
-    }
-
-    public Order getOrder() {
-        return order;
     }
 
     public void setQuantity(Integer quantity) {
