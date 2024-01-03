@@ -53,7 +53,7 @@ public class Group {
      * @param user code.User to be deleted
      * @throws UserNotInGroup Thrown if user is not present in this group
      */
-    public void removeFromGroup(User user) throws UserNotInGroup{
+    public void removeFromGroup(User user) throws UserNotInGroup{ // Added To Diagram by AV
         if (!members.contains(user)){
             throw new UserNotInGroup();
         }

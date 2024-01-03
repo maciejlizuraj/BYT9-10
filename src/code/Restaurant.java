@@ -33,7 +33,7 @@ public class Restaurant {
      * @param owner Owner to be added
      * @throws AlreadyAnOwnerException Thrown if owner to be added is already present as an owner
      */
-    public void addAnOwner(RestaurantOwner owner) throws AlreadyAnOwnerException {
+    public void addAnOwner(RestaurantOwner owner) throws AlreadyAnOwnerException { //Added to the diagram by AV
         if (owners.contains(owner))
             throw new AlreadyAnOwnerException();
         owners.add(owner);
@@ -45,7 +45,7 @@ public class Restaurant {
      * @throws NotAnOwnerException Thrown if owner to be deleted is not present as an owner
      * @throws OnlyOwnerException Thrown if removing the owner would mean making the restaurant owner-less
      */
-    public void removeAnOwner(RestaurantOwner owner) throws NotAnOwnerException, OnlyOwnerException {
+    public void removeAnOwner(RestaurantOwner owner) throws NotAnOwnerException, OnlyOwnerException { //Added to the diagram by AV
         if (!owners.contains(owner))
             throw new NotAnOwnerException();
         if(owners.size()==1)
