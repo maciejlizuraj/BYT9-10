@@ -1,4 +1,4 @@
 package code;
 
-public enum Allergen {Milk, Meat}
+public enum Allergen {Milk, Meat, PEANUTS}
 //add more

@@ -1,6 +1,7 @@
 package test;
 
 import code.*;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.Calendar;
@@ -33,7 +34,7 @@ class OrderProductTest {
 
     @Test
     void constructorTest(){
-        p3 = new OrderProduct(carbonara, 2);
+        p2 = new OrderProduct(carbonara, 2);
     }
     @Test
     void getQuantity() {
