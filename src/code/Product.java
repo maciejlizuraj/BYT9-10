@@ -13,6 +13,7 @@ public class Product {
     private Set<Allergen> allergens;
     private Restaurant restaurant;
     private Set<Coupon> coupons;
+    private Set<OrderProduct> associatedOrderProducts;
 
     static Map<Allergen, Set<Product>> allergenToProducts = new HashMap<>();
     static Map<Restaurant, Set<Product>> restaurantToProducts = new HashMap<>();
@@ -32,6 +33,7 @@ public class Product {
         this.allergens = allergens;
         this.restaurant = restaurant;
         coupons = new HashSet<>();
+        associatedOrderProducts = new HashSet<>();
     }
 
     /**
@@ -80,6 +82,14 @@ public class Product {
         restaurantToProducts.get(this.restaurant).remove(this);
     }
 
+    /**
+     * Adds new associated OrderProduct to this products list
+     * @param orderProduct OrderProduct class object to be added
+     */
+    public void addAssociatedOrderProduct(OrderProduct orderProduct) {
+        this.associatedOrderProducts.add(orderProduct);
+    }
+
     public String getName() {
         return name;
     }
@@ -111,4 +121,10 @@ public class Product {
     public static Map<Restaurant, Set<Product>> getRestaurantToProducts() {
         return restaurantToProducts;
     }
+
+    public Set<OrderProduct> getAssociatedOrderProducts() {
+        return associatedOrderProducts;
+    }
+
+
 }

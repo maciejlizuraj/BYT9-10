@@ -30,14 +30,15 @@ class OrderTest {
         margarita = new Product("Margarita", "Pizza margarita", 30, new HashSet<>(), restaurant);
         user = new User("bartolomeo@gmail.com", "password123");
         group = new Group("group", user);
-        orderSet.add(new OrderProduct(carbonara, 2));
-        orderSet.add(new OrderProduct(margarita, 1));
-        order = new Order(new Date(2024, Calendar.JANUARY, 3), group, orderSet);
+        order = new Order(new Date(2024, Calendar.JANUARY, 3), group);
+        order.addToOrder(OrderProduct.createOrderProduct(carbonara,2,order));
+        order.addToOrder(OrderProduct.createOrderProduct(margarita,1,order));
+
     }
 
     @Test
     void constructorTest(){
-        Order newOrder = new Order(new Date(2024, Calendar.JANUARY, 3), group, orderSet);
+        Order newOrder = new Order(new Date(2024, Calendar.JANUARY, 3), group);
         assertEquals(newOrder, order);
     }
     @Test

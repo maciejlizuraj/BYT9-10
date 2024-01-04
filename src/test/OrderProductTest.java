@@ -18,6 +18,7 @@ class OrderProductTest {
     Product margarita;
     User user;
     Group group;
+    Order order;
     OrderProduct p1;
     OrderProduct p2;
     @BeforeEach
@@ -28,13 +29,14 @@ class OrderProductTest {
         margarita = new Product("Margarita", "Pizza margarita", 30, new HashSet<>(), restaurant);
         user = new User("bartolomeo@gmail.com", "password123");
         group = new Group("group", user);
-        p1 = new OrderProduct(carbonara, 2);
-        p2 = new OrderProduct(margarita, 1);
+        order = new Order(new Date(2024, Calendar.JANUARY, 3), group);
+        p1 = OrderProduct.createOrderProduct(carbonara,2,order);
+        p2 = OrderProduct.createOrderProduct(margarita,1,order);
     }
 
     @Test
     void constructorTest(){
-        p2 = new OrderProduct(carbonara, 2);
+        p2 = OrderProduct.createOrderProduct(carbonara, 2, order);
     }
     @Test
     void getQuantity() {

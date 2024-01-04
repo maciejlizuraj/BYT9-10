@@ -18,16 +18,12 @@ public class Order {
      * Default constructor of an order
      * @param date Date when order was created
      * @param group code.Group which created the order
-     * @param orderProducts Set containing all related products and their quantities
      */
-    public Order(Date date, Group group, Set<OrderProduct> orderProducts) {
+    public Order(Date date, Group group) {
         this.date = date;
         this.group = group;
-        this.orderProducts = orderProducts;
+        orderProducts = new HashSet<>();
         totalPrice = 0;
-        for (OrderProduct orderProduct : orderProducts) {
-            totalPrice += (double) orderProduct.getQuantity() * orderProduct.getProduct().getPrice();
-        }
 
         orders.add(this);
     }
@@ -48,6 +44,14 @@ public class Order {
         Set<Order> result = new HashSet<>();
         //TODO populating the result
         return result;
+    }
+
+    /**
+     * Allows adding OrderProduct classes to this order. Used automatically in process of creating OrderProduct
+     * @param orderProduct OrderProduct class object to be added
+     */
+    public void addToOrder(OrderProduct orderProduct) {
+        this.orderProducts.add(orderProduct);
     }
 
     public static Set<Order> getOrders() {
